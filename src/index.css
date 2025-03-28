@@ -1,0 +1,241 @@
+/* Cyberpunk Neon Theme */
+:root {
+  --neon-pink: #ff2a6d;
+  --neon-blue: #05d9e8;
+  --neon-purple: #d300c5;
+  --dark-bg: #0d0221;
+  --terminal-green: #00ff41;
+  --glow-effect: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-blue);
+}
+
+/* Cyberpunk Base Styles */
+.cyberpunk-container {
+  max-width: 800px;
+  margin-top: 10%;
+  margin-left: 15%;
+  /* margin: 0 auto; */
+  padding: 2rem;
+  background: var(--dark-bg);
+  color: white;
+  font-family: 'Courier New', monospace;
+  border: 1px solid var(--neon-blue);
+  box-shadow: var(--glow-effect);
+}
+
+/* Glitchy Header */
+.cyberpunk-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cyberpunk-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cyberpunk-glitch {
+  color: var(--neon-pink);
+  text-shadow: 3px 3px 0 var(--neon-blue);
+  animation: glitch 2s infinite;
+}
+
+.cyberpunk-neon {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, 3px); }
+  80% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
+}
+
+.cyberpunk-subtitle {
+  color: var(--terminal-green);
+  margin-top: 0.5rem;
+  letter-spacing: 3px;
+}
+
+/* Terminal-Style Search */
+.cyberpunk-search {
+  margin-bottom: 2rem;
+}
+
+.cyberpunk-input-group {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--neon-blue);
+  padding: 0.5rem;
+}
+
+.cyberpunk-prompt {
+  color: var(--terminal-green);
+  padding: 0 0.5rem;
+}
+
+.cyberpunk-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Courier New', monospace;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.cyberpunk-input::placeholder {
+  color: #666;
+}
+
+.cyberpunk-button {
+  background: var(--neon-pink);
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cyberpunk-button:hover {
+  background: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* Matrix Loading Animation */
+.cyberpunk-loading {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.cyberpunk-matrix {
+  width: 100%;
+  height: 100px;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 65, 0.1),
+    rgba(0, 255, 65, 0.1) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+  animation: matrix 2s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes matrix {
+  from { background-position: 0 0; }
+  to { background-position: 0 20px; }
+}
+
+/* Error State (Red Alert) */
+.cyberpunk-error {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+  padding: 1rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #ff5555;
+}
+
+/* Cyberpunk Profile Card */
+.cyberpunk-profile {
+  display: flex;
+  gap: 2rem;
+  background: rgba(13, 2, 33, 0.7);
+  border: 1px solid var(--neon-purple);
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 15px var(--neon-purple);
+}
+
+.cyberpunk-avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.cyberpunk-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  position: relative;
+  border: 2px solid var(--neon-blue);
+}
+
+.cyberpunk-avatar-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--neon-blue);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  filter: blur(15px);
+  opacity: 0.5;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+.cyberpunk-profile-info {
+  flex: 1;
+}
+
+.cyberpunk-username {
+  color: var(--neon-pink);
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+}
+
+.cyberpunk-bio {
+  color: var(--terminal-green);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.cyberpunk-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cyberpunk-stat {
+  text-align: center;
+}
+
+.cyberpunk-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--neon-blue);
+  font-weight: bold;
+}
+
+.cyberpunk-stat-label {
+  font-size: 0.8rem;
+  color: var(--terminal-green);
+  text-transform: uppercase;
+}
+
+.cyberpunk-link {
+  color: var(--neon-pink);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.cyberpunk-link:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue);
+}
