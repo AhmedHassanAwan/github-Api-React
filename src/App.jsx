@@ -33,7 +33,7 @@ function App() {
             <div className="cyberpunk-header">
                 <h1 className="cyberpunk-title">
                     <span className="cyberpunk-glitch">GITHUB</span>
-                    <span className="cyberpunk-neon">_HACKER</span>
+                    <span className="cyberpunk-neon">_HACKER...</span>
                 </h1>
                 <p className="cyberpunk-subtitle">// ENTER TARGET USERNAME</p>
             </div>
